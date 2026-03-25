@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garage 6691 — Manual de Identidade Visual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #e2e8f0;
+  background: #0F172A;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: #2563EB; text-decoration: none; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
+
+/* ========== UTILITY ========== */
+.section { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2563EB;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #f8fafc;
+  margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 24px;
+}
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ========== NAV ========== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(15,23,42,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+}
+.nav-logo { height: 32px; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; font-size: 0.82rem;
+  letter-spacing: 0.5px; color: #94a3b8;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #f8fafc; }
+
+/* ========== 1. HERO ========== */
+#hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 120px 24px 80px;
+  background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(37,99,235,0.08) 0%, transparent 70%), #0F172A;
+  position: relative;
+}
+.hero-logo {
+  max-width: 500px; width: 90%;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 4px 32px rgba(37,99,235,0.12));
+  animation: heroFade 1.2s ease both;
+}
+@keyframes heroFade { from { opacity: 0; transform: scale(0.92) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+.hero-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; font-size: 1.1rem;
+  letter-spacing: 6px; text-transform: uppercase;
+  color: #2563EB; margin-bottom: 8px;
+  animation: heroFade 1.2s 0.3s ease both;
+}
+.hero-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; font-size: 1.6rem;
+  color: #cbd5e1;
+  animation: heroFade 1.2s 0.5s ease both;
+}
+.scroll-indicator {
+  position: absolute; bottom: 36px;
+  width: 24px; height: 40px;
+  border: 2px solid rgba(148,163,184,0.3);
+  border-radius: 12px; display: flex; justify-content: center;
+  animation: heroFade 1.2s 0.8s ease both;
+}
+.scroll-dot {
+  width: 4px; height: 8px; background: #2563EB;
+  border-radius: 4px; margin-top: 6px;
+  animation: scrollBounce 2s infinite;
+}
+@keyframes scrollBounce { 0%,100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(12px); opacity: 0.3; } }
+
+/* ========== 2. CONCEITO ========== */
+.concept-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: rgba(37,99,235,0.12);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 1.5rem;
+}
+.concept-card { padding: 36px 28px; }
+.concept-card h3 { font-weight: 600; font-size: 1.15rem; color: #f1f5f9; margin-bottom: 10px; }
+.concept-card p { font-size: 0.92rem; color: #94a3b8; }
+
+/* ========== 3. PALETA ========== */
+.color-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 20px; }
+.color-swatch {
+  border-radius: 14px; overflow: hidden; cursor: pointer;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.2s;
+}
+.color-swatch:hover { transform: scale(1.03); }
+.swatch-block { height: 100px; transition: transform 0.3s; }
+.swatch-info { padding: 14px 16px; }
+.swatch-name { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; color: #f1f5f9; }
+.swatch-hex { font-family: 'Inter', monospace; font-size: 0.78rem; color: #64748b; margin-top: 2px; }
+.swatch-copied {
+  font-size: 0.7rem; color: #2563EB; font-weight: 600;
+  opacity: 0; transition: opacity 0.3s; margin-top: 2px;
+}
+.swatch-copied.show { opacity: 1; }
+
+/* ========== 4. TIPOGRAFIA ========== */
+.type-block { margin-bottom: 48px; }
+.type-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; font-size: 0.75rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: #2563EB; margin-bottom: 20px;
+}
+.type-sample {
+  padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap;
+}
+.type-weight { font-size: 0.72rem; color: #64748b; min-width: 80px; font-family: 'Inter', sans-serif; }
+.type-text-mont { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: #f1f5f9; }
+.type-text-inter { font-family: 'Inter', sans-serif; font-size: 1.3rem; color: #f1f5f9; }
+
+/* ========== 5. LOGO PRINCIPAL ========== */
+.logo-showcase {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+}
+.showcase-card {
+  border-radius: 20px; padding: 56px 40px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 420px;
+}
+.showcase-card img { max-width: 320px; width: 100%; }
+.showcase-light { background: #f8fafc; }
+.showcase-dark { background: #0F172A; border: 1px solid rgba(255,255,255,0.08); }
+.showcase-caption {
+  margin-top: 24px; font-size: 0.82rem; color: #64748b;
+  font-family: 'Montserrat', sans-serif; font-weight: 500;
+}
+.showcase-dark .showcase-caption { color: #64748b; }
+
+/* ========== 6. VARIACOES ========== */
+.var-group { margin-bottom: 56px; }
+.var-group-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; font-size: 1.1rem; color: #f1f5f9;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.var-grid { display: grid; gap: 16px; }
+.var-grid-5 { grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); }
+.var-grid-4 { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+.var-grid-wide { grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); }
+.var-item {
+  border-radius: 14px; padding: 28px 20px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 180px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+.var-item img { max-height: 120px; width: auto; max-width: 100%; object-fit: contain; }
+.var-item-wide img { max-height: 60px; width: 100%; object-fit: contain; }
+.var-item-icon img { max-height: 140px; }
+.var-bg-light { background: #f8fafc; }
+.var-bg-dark { background: #0F172A; }
+.var-bg-mid { background: #1e293b; }
+.var-label {
+  position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;
+  font-size: 0.68rem; font-family: 'Montserrat', sans-serif;
+  font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+}
+.var-bg-light .var-label { color: #94a3b8; }
+.var-bg-dark .var-label, .var-bg-mid .var-label { color: #475569; }
+
+/* ========== 7. MOCKUPS ========== */
+.mockup-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 28px;
+}
+.mockup-card { border-radius: 16px; overflow: hidden; }
+.mockup-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.mockup-caption {
+  padding: 18px 24px;
+  font-family: 'Montserrat', sans-serif; font-weight: 500;
+  font-size: 0.88rem; color: #cbd5e1;
+  background: rgba(255,255,255,0.03);
+}
+
+/* ========== 8. AREA DE PROTECAO ========== */
+.protection-visual {
+  display: flex; align-items: center; justify-content: center;
+  padding: 60px; margin-bottom: 48px;
+  background: rgba(255,255,255,0.03); border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.protection-logo-wrap {
+  position: relative; display: inline-block;
+}
+.protection-logo-wrap img { width: 200px; }
+.protection-border {
+  position: absolute; inset: -30px;
+  border: 2px dashed rgba(37,99,235,0.4);
+  border-radius: 8px;
+}
+.protection-arrow {
+  position: absolute; color: #2563EB; font-size: 0.65rem;
+  font-family: 'Montserrat', sans-serif; font-weight: 600;
+}
+.protection-arrow.top { top: -26px; left: 50%; transform: translateX(-50%); }
+.protection-arrow.left { left: -46px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+.size-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 20px; }
+.size-card {
+  padding: 28px 24px; text-align: center;
+}
+.size-value {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 2rem; color: #2563EB; margin-bottom: 4px;
+}
+.size-context {
+  font-family: 'Montserrat', sans-serif; font-weight: 600;
+  font-size: 0.82rem; color: #f1f5f9; margin-bottom: 4px;
+}
+.size-detail { font-size: 0.78rem; color: #64748b; }
+
+/* ========== 9. USOS INCORRETOS ========== */
+.dont-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px; }
+.dont-card { padding: 32px 24px; text-align: center; }
+.dont-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(239,68,68,0.12); color: #ef4444;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; font-size: 1.4rem;
+}
+.dont-card h4 {
+  font-family: 'Montserrat', sans-serif; font-weight: 600;
+  font-size: 0.9rem; color: #f1f5f9; margin-bottom: 8px;
+}
+.dont-card p { font-size: 0.82rem; color: #94a3b8; }
+
+/* ========== 10. FOOTER ========== */
+footer {
+  text-align: center; padding: 80px 24px 48px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+footer img { width: 60px; margin: 0 auto 20px; opacity: 0.15; }
+footer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem; color: #475569; letter-spacing: 1px;
+}
+
+/* ========== TOAST ========== */
+.toast {
+  position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px);
+  background: #1e293b; color: #f1f5f9; padding: 12px 28px;
+  border-radius: 10px; font-size: 0.85rem; font-weight: 500;
+  border: 1px solid rgba(37,99,235,0.3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s;
+  opacity: 0; z-index: 200; pointer-events: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* ========== RESPONSIVE 768px ========== */
+@media (max-width: 768px) {
+  .section { padding: 72px 20px; }
+  .section-title { font-size: 1.9rem; }
+  .section-desc { font-size: 0.95rem; }
+  .nav-links { display: none; }
+  .hero-logo { max-width: 360px; }
+  .hero-sub { font-size: 1.2rem; }
+  .hero-tag { font-size: 0.95rem; letter-spacing: 4px; }
+  .logo-showcase { grid-template-columns: 1fr; }
+  .showcase-card { min-height: 320px; padding: 40px 24px; }
+  .showcase-card img { max-width: 260px; }
+  .type-text-mont { font-size: 1.4rem; }
+  .type-text-inter { font-size: 1.1rem; }
+  .type-sample { flex-direction: column; gap: 6px; }
+  .color-grid { grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); gap: 14px; }
+  .swatch-block { height: 72px; }
+  .mockup-grid { grid-template-columns: 1fr; }
+  .var-grid-5, .var-grid-4 { grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); }
+  .var-grid-wide { grid-template-columns: 1fr; }
+  .var-item { min-height: 140px; padding: 20px 16px; }
+  .var-item img { max-height: 90px; }
+  .var-item-wide img { max-height: 48px; }
+  .protection-visual { padding: 40px 20px; }
+  .protection-logo-wrap img { width: 140px; }
+  .protection-border { inset: -22px; }
+  .size-grid { grid-template-columns: repeat(2, 1fr); }
+  .dont-grid { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+}
+
+/* ========== RESPONSIVE 480px ========== */
+@media (max-width: 480px) {
+  html { font-size: 15px; }
+  .section { padding: 56px 16px; }
+  .section-title { font-size: 1.55rem; }
+  .section-label { font-size: 0.68rem; letter-spacing: 2px; }
+  .section-desc { font-size: 0.88rem; margin-bottom: 40px; }
+  .hero-logo { max-width: 280px; }
+  .hero-sub { font-size: 1rem; }
+  .hero-tag { font-size: 0.8rem; letter-spacing: 3px; }
+  .nav-inner { padding: 10px 16px; }
+  .nav-logo { height: 26px; }
+  .concept-card { padding: 24px 20px; }
+  .color-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .swatch-block { height: 60px; }
+  .swatch-info { padding: 10px 12px; }
+  .swatch-name { font-size: 0.78rem; }
+  .logo-showcase { gap: 20px; }
+  .showcase-card { min-height: 260px; padding: 32px 16px; }
+  .showcase-card img { max-width: 200px; }
+  .type-text-mont { font-size: 1.15rem; }
+  .type-text-inter { font-size: 1rem; }
+  .var-grid-5, .var-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .var-grid-wide { grid-template-columns: 1fr; }
+  .var-item { min-height: 110px; padding: 16px 12px; }
+  .var-item img { max-height: 70px; }
+  .var-item-wide img { max-height: 36px; }
+  .var-item-icon img { max-height: 90px; }
+  .mockup-grid { gap: 16px; }
+  .size-grid { grid-template-columns: 1fr; gap: 12px; }
+  .size-value { font-size: 1.6rem; }
+  .dont-grid { grid-template-columns: 1fr; gap: 14px; }
+  .dont-card { padding: 24px 18px; }
+  .protection-visual { padding: 28px 16px; }
+  .protection-logo-wrap img { width: 100px; }
+  .protection-border { inset: -16px; }
+  .protection-arrow { font-size: 0.55rem; }
+  .protection-arrow.left { left: -36px; }
+  footer { padding: 56px 16px 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav>
+  <div class="nav-inner">
+    <img src="logos/inline-white.png" alt="Garage 6691" class="nav-logo">
+    <ul class="nav-links">
+      <li><a href="#conceito">Conceito</a></li>
+      <li><a href="#paleta">Cores</a></li>
+      <li><a href="#tipografia">Tipografia</a></li>
+      <li><a href="#logo-principal">Logo</a></li>
+      <li><a href="#variacoes">Variações</a></li>
+      <li><a href="#mockups">Mockups</a></li>
+      <li><a href="#protecao">Proteção</a></li>
+      <li><a href="#incorretos">Usos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== 1. HERO ========== -->
+<section id="hero">
+  <img src="logos/standard-white.png" alt="Garage 6691 — Logo Completo" class="hero-logo">
+  <p class="hero-tag">Identidade Visual</p>
+  <p class="hero-sub">Especializada em Veículos Alemães</p>
+  <div class="scroll-indicator"><div class="scroll-dot"></div></div>
+</section>
+
+<!-- ========== 2. CONCEITO ========== -->
+<section id="conceito" class="section">
+  <div class="fade-in">
+    <p class="section-label">Conceito</p>
+    <h2 class="section-title">O Grifo</h2>
+    <p class="section-desc">Criatura mitológica que une a força do leão à visão da águia — símbolo perfeito para uma oficina que combina potência mecânica com precisão técnica.</p>
+  </div>
+  <div class="grid-auto">
+    <div class="card concept-card fade-in">
+      <div class="concept-icon">
+        <svg width="24" height="24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3>Força e Precisão Alemã</h3>
+      <p>O Grifo representa a engenharia alemã em sua essência: potência bruta aliada a uma precisão milimétrica que define cada serviço executado na oficina.</p>
+    </div>
+    <div class="card concept-card fade-in">
+      <div class="concept-icon">
+        <svg width="24" height="24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Proteção e Confiança</h3>
+      <p>Guardião dos tesouros na mitologia, o Grifo simboliza a confiança que os clientes depositam ao entregar seus veículos premium aos cuidados da Garage 6691.</p>
+    </div>
+    <div class="card concept-card fade-in">
+      <div class="concept-icon">
+        <svg width="24" height="24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <h3>Excelência em Cada Detalhe</h3>
+      <p>Com olhos de águia para os detalhes, cada traço do logo reflete o compromisso com a excelência técnica que distingue a oficina no mercado de veículos alemães.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. PALETA DE CORES ========== -->
+<section id="paleta" class="section">
+  <div class="fade-in">
+    <p class="section-label">Paleta de Cores</p>
+    <h2 class="section-title">Cores da Marca</h2>
+    <p class="section-desc">Uma paleta sóbria e técnica que transmite autoridade, confiança e sofisticação mecânica.</p>
+  </div>
+  <div class="color-grid fade-in" id="colorGrid"></div>
+</section>
+
+<!-- ========== 4. TIPOGRAFIA ========== -->
+<section id="tipografia" class="section">
+  <div class="fade-in">
+    <p class="section-label">Tipografia</p>
+    <h2 class="section-title">Fontes da Marca</h2>
+    <p class="section-desc">Montserrat para títulos com personalidade forte. Inter para textos com leitura confortável e profissional.</p>
+  </div>
+  <div class="fade-in">
+    <div class="type-block">
+      <p class="type-label">Montserrat — Títulos e Destaques</p>
+      <div class="type-sample">
+        <span class="type-weight">Light 300</span>
+        <span class="type-text-mont" style="font-weight:300">Garage 6691 — Precisão Alemã</span>
+      </div>
+      <div class="type-sample">
+        <span class="type-weight">Regular 400</span>
+        <span class="type-text-mont" style="font-weight:400">Garage 6691 — Precisão Alemã</span>
+      </div>
+      <div class="type-sample">
+        <span class="type-weight">Medium 500</span>
+        <span class="type-text-mont" style="font-weight:500">Garage 6691 — Precisão Alemã</span>
+      </div>
+      <div class="type-sample">
+        <span class="type-weight">SemiBold 600</span>
+        <span class="type-text-mont" style="font-weight:600">Garage 6691 — Precisão Alemã</span>
+      </div>
+      <div class="type-sample">
+        <span class="type-weight">Bold 700</span>
+        <span class="type-text-mont" style="font-weight:700">Garage 6691 — Precisão Alemã</span>
+      </div>
+      <div class="type-sample">
+        <span class="type-weight">Black 900</span>
+        <span class="type-text-mont" style="font-weight:900">Garage 6691 — Precisão Alemã</span>
+      </div>
+    </div>
+    <div class="type-block">
+      <p class="type-label">Inter — Texto Corrido e Interface</p>
+      <div class="type-sample">
+        <span class="type-weight">Light 300</span>
+        <span class="type-text-inter" style="font-weight:300">Manutenção preventiva e corretiva para veículos alemães com peças originais.</span>
+      </div>
+      <div class="type-sample">
+        <span class="type-weight">Regular 400</span>
+        <span class="type-text-inter" style="font-weight:400">Manutenção preventiva e corretiva para veículos alemães com peças originais.</span>
+      </div>
+      <div class="type-sample">
+        <span class="type-weight">Medium 500</span>
+        <span class="type-text-inter" style="font-weight:500">Manutenção preventiva e corretiva para veículos alemães com peças originais.</span>
+      </div>
+      <div class="type-sample">
+        <span class="type-weight">SemiBold 600</span>
+        <span class="type-text-inter" style="font-weight:600">Manutenção preventiva e corretiva para veículos alemães com peças originais.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. LOGO PRINCIPAL ========== -->
+<section id="logo-principal" class="section">
+  <div class="fade-in">
+    <p class="section-label">Logo Principal</p>
+    <h2 class="section-title">Marca Completa</h2>
+    <p class="section-desc">A versão principal do logo combina o símbolo do Grifo com o nome da oficina. Deve ser utilizada sempre que possível como representação primária da marca.</p>
+  </div>
+  <div class="logo-showcase fade-in">
+    <div class="showcase-card showcase-light">
+      <img src="logos/standard-slate.png" alt="Logo Slate sobre fundo claro">
+      <span class="showcase-caption">Fundo Claro — Versão Slate</span>
+    </div>
+    <div class="showcase-card showcase-dark">
+      <img src="logos/standard-white.png" alt="Logo Branco sobre fundo escuro">
+      <span class="showcase-caption">Fundo Escuro — Versão Branca</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. VARIACOES ========== -->
+<section id="variacoes" class="section">
+  <div class="fade-in">
+    <p class="section-label">Variações</p>
+    <h2 class="section-title">Variações de Layout</h2>
+    <p class="section-desc">Todas as versões do logo organizadas por layout e cor, garantindo flexibilidade para qualquer aplicação sem perder a identidade.</p>
+  </div>
+
+  <!-- Standard -->
+  <div class="var-group fade-in">
+    <h3 class="var-group-title">Standard — Logo Completo (Grifo + Texto)</h3>
+    <div class="var-grid var-grid-5">
+      <div class="var-item var-bg-light"><img src="logos/standard-slate.png" alt="Standard Slate"><span class="var-label">Slate</span></div>
+      <div class="var-item var-bg-light"><img src="logos/standard-blue.png" alt="Standard Blue"><span class="var-label">Blue</span></div>
+      <div class="var-item var-bg-dark"><img src="logos/standard-white.png" alt="Standard White"><span class="var-label">White</span></div>
+      <div class="var-item var-bg-light"><img src="logos/standard-black.png" alt="Standard Black"><span class="var-label">Black</span></div>
+      <div class="var-item var-bg-light"><img src="logos/standard-gray.png" alt="Standard Gray"><span class="var-label">Gray</span></div>
+    </div>
+  </div>
+
+  <!-- Symbol -->
+  <div class="var-group fade-in">
+    <h3 class="var-group-title">Símbolo — Grifo Isolado</h3>
+    <div class="var-grid var-grid-5">
+      <div class="var-item var-bg-light"><img src="logos/symbol-slate.png" alt="Symbol Slate"><span class="var-label">Slate</span></div>
+      <div class="var-item var-bg-light"><img src="logos/symbol-blue.png" alt="Symbol Blue"><span class="var-label">Blue</span></div>
+      <div class="var-item var-bg-dark"><img src="logos/symbol-white.png" alt="Symbol White"><span class="var-label">White</span></div>
+      <div class="var-item var-bg-light"><img src="logos/symbol-black.png" alt="Symbol Black"><span class="var-label">Black</span></div>
+      <div class="var-item var-bg-light"><img src="logos/symbol-gray.png" alt="Symbol Gray"><span class="var-label">Gray</span></div>
+    </div>
+  </div>
+
+  <!-- Horizontal -->
+  <div class="var-group fade-in">
+    <h3 class="var-group-title">Horizontal — Símbolo + Texto Lado a Lado</h3>
+    <div class="var-grid var-grid-wide">
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/horizontal-slate.png" alt="Horizontal Slate"><span class="var-label">Slate</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/horizontal-blue.png" alt="Horizontal Blue"><span class="var-label">Blue</span></div>
+      <div class="var-item var-item-wide var-bg-dark"><img src="logos/horizontal-white.png" alt="Horizontal White"><span class="var-label">White</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/horizontal-black.png" alt="Horizontal Black"><span class="var-label">Black</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/horizontal-gray.png" alt="Horizontal Gray"><span class="var-label">Gray</span></div>
+    </div>
+  </div>
+
+  <!-- Horizontal Tagline -->
+  <div class="var-group fade-in">
+    <h3 class="var-group-title">Horizontal com Tagline</h3>
+    <div class="var-grid var-grid-wide">
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/horizontal-slate-tagline.png" alt="Horizontal Slate Tagline"><span class="var-label">Slate + Tagline</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/horizontal-blue-tagline.png" alt="Horizontal Blue Tagline"><span class="var-label">Blue + Tagline</span></div>
+      <div class="var-item var-item-wide var-bg-dark"><img src="logos/horizontal-white-tagline.png" alt="Horizontal White Tagline"><span class="var-label">White + Tagline</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/horizontal-black-tagline.png" alt="Horizontal Black Tagline"><span class="var-label">Black + Tagline</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/horizontal-gray-tagline.png" alt="Horizontal Gray Tagline"><span class="var-label">Gray + Tagline</span></div>
+    </div>
+  </div>
+
+  <!-- Inline -->
+  <div class="var-group fade-in">
+    <h3 class="var-group-title">Inline Compacto</h3>
+    <div class="var-grid var-grid-5">
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/inline-slate.png" alt="Inline Slate"><span class="var-label">Slate</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/inline-blue.png" alt="Inline Blue"><span class="var-label">Blue</span></div>
+      <div class="var-item var-item-wide var-bg-dark"><img src="logos/inline-white.png" alt="Inline White"><span class="var-label">White</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/inline-black.png" alt="Inline Black"><span class="var-label">Black</span></div>
+      <div class="var-item var-item-wide var-bg-light"><img src="logos/inline-gray.png" alt="Inline Gray"><span class="var-label">Gray</span></div>
+    </div>
+  </div>
+
+  <!-- Icon -->
+  <div class="var-group fade-in">
+    <h3 class="var-group-title">Ícone Quadrado (1024 x 1024)</h3>
+    <div class="var-grid var-grid-4">
+      <div class="var-item var-item-icon var-bg-light"><img src="logos/icon-slate.png" alt="Icon Slate"><span class="var-label">Slate</span></div>
+      <div class="var-item var-item-icon var-bg-light"><img src="logos/icon-blue.png" alt="Icon Blue"><span class="var-label">Blue</span></div>
+      <div class="var-item var-item-icon var-bg-mid"><img src="logos/icon-white.png" alt="Icon White"><span class="var-label">White</span></div>
+      <div class="var-item var-item-icon var-bg-light"><img src="logos/icon-black.png" alt="Icon Black"><span class="var-label">Black</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. MOCKUPS ========== -->
+<section id="mockups" class="section">
+  <div class="fade-in">
+    <p class="section-label">Aplicações</p>
+    <h2 class="section-title">Mockups Criativos</h2>
+    <p class="section-desc">Simulações de como a identidade visual se comporta em materiais reais do dia a dia da oficina.</p>
+  </div>
+  <div class="mockup-grid fade-in">
+    <div class="card mockup-card">
+      <img src="mockups/business-card.png" alt="Cartão de Visita" loading="lazy">
+      <div class="mockup-caption">Cartão de Visita</div>
+    </div>
+    <div class="card mockup-card">
+      <img src="mockups/uniform.png" alt="Uniforme" loading="lazy">
+      <div class="mockup-caption">Uniforme da Equipe</div>
+    </div>
+    <div class="card mockup-card">
+      <img src="mockups/signage.png" alt="Fachada" loading="lazy">
+      <div class="mockup-caption">Fachada e Sinalização</div>
+    </div>
+    <div class="card mockup-card">
+      <img src="mockups/car-sticker.png" alt="Adesivo Veicular" loading="lazy">
+      <div class="mockup-caption">Adesivo Veicular</div>
+    </div>
+    <div class="card mockup-card">
+      <img src="mockups/social-media.png" alt="Redes Sociais" loading="lazy">
+      <div class="mockup-caption">Redes Sociais</div>
+    </div>
+    <div class="card mockup-card">
+      <img src="mockups/garage-door.png" alt="Porta da Oficina" loading="lazy">
+      <div class="mockup-caption">Porta da Oficina</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. AREA DE PROTECAO ========== -->
+<section id="protecao" class="section">
+  <div class="fade-in">
+    <p class="section-label">Construção</p>
+    <h2 class="section-title">Área de Proteção</h2>
+    <p class="section-desc">O espaço mínimo ao redor do logo garante legibilidade e impacto visual em qualquer aplicação. A margem de segurança é equivalente a 1/4 da largura do logo.</p>
+  </div>
+  <div class="protection-visual fade-in">
+    <div class="protection-logo-wrap">
+      <img src="logos/standard-white.png" alt="Área de proteção">
+      <div class="protection-border"></div>
+      <span class="protection-arrow top">1/4 W</span>
+      <span class="protection-arrow left">1/4 W</span>
+    </div>
+  </div>
+  <div class="size-grid fade-in">
+    <div class="card size-card">
+      <div class="size-value">120px</div>
+      <div class="size-context">Digital</div>
+      <div class="size-detail">Largura mínima para telas e interfaces web</div>
+    </div>
+    <div class="card size-card">
+      <div class="size-value">25mm</div>
+      <div class="size-context">Impressão</div>
+      <div class="size-detail">Largura mínima para materiais impressos</div>
+    </div>
+    <div class="card size-card">
+      <div class="size-value">40cm</div>
+      <div class="size-context">Sinalização</div>
+      <div class="size-detail">Largura mínima para placas e fachadas</div>
+    </div>
+    <div class="card size-card">
+      <div class="size-value">15cm</div>
+      <div class="size-context">Veículos</div>
+      <div class="size-detail">Largura mínima para adesivos veiculares</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 9. USOS INCORRETOS ========== -->
+<section id="incorretos" class="section">
+  <div class="fade-in">
+    <p class="section-label">Restrições</p>
+    <h2 class="section-title">Usos Incorretos</h2>
+    <p class="section-desc">Para preservar a integridade da marca, evite as seguintes aplicações do logo.</p>
+  </div>
+  <div class="dont-grid fade-in">
+    <div class="card dont-card">
+      <div class="dont-icon">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 3H3v18"/><path d="M21 3L3 21"/></svg>
+      </div>
+      <h4>Não Distorcer</h4>
+      <p>Nunca altere as proporções originais do logo, esticando ou comprimindo horizontal ou verticalmente.</p>
+    </div>
+    <div class="card dont-card">
+      <div class="dont-icon">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+      </div>
+      <h4>Não Rotacionar</h4>
+      <p>O logo deve ser sempre aplicado na posição horizontal original. Nunca incline ou gire.</p>
+    </div>
+    <div class="card dont-card">
+      <div class="dont-icon">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M11 7v4h3"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+      </div>
+      <h4>Não Alterar Cores</h4>
+      <p>Use apenas as variações de cor oficiais. Nunca aplique gradientes, cores aleatórias ou filtros.</p>
+    </div>
+    <div class="card dont-card">
+      <div class="dont-icon">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="16" height="16" rx="3"/><path d="M3 12h16"/><path d="M12 3v16"/></svg>
+      </div>
+      <h4>Não Adicionar Efeitos</h4>
+      <p>Sombras, brilhos, contornos, texturas e outros efeitos visuais comprometem a leitura da marca.</p>
+    </div>
+    <div class="card dont-card">
+      <div class="dont-icon">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="18" height="18" rx="2"/><path d="M8 2v18"/><path d="M14 2v18"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+      </div>
+      <h4>Não Cortar</h4>
+      <p>Todas as versões devem ser exibidas por completo. Nunca recorte partes do Grifo ou do texto.</p>
+    </div>
+    <div class="card dont-card">
+      <div class="dont-icon">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="18" height="18" rx="2"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/><circle cx="15" cy="7" r="1.5" fill="currentColor"/><circle cx="7" cy="15" r="1.5" fill="currentColor"/><circle cx="15" cy="15" r="1.5" fill="currentColor"/><circle cx="11" cy="11" r="1.5" fill="currentColor"/></svg>
+      </div>
+      <h4>Não Usar Fundos Poluídos</h4>
+      <p>Evite aplicar o logo sobre imagens complexas ou padrões que prejudiquem o contraste e a legibilidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10. FOOTER ========== -->
+<footer>
+  <img src="logos/symbol-white.png" alt="Grifo">
+  <p>GARAGE 6691 &mdash; MANUAL DE IDENTIDADE VISUAL &copy; 2026</p>
+</footer>
+
+<!-- ========== TOAST ========== -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== COLOR PALETTE ===== */
+const colors = [
+  { name: 'Slate', hex: '#1E293B', text: '#fff' },
+  { name: 'Blue', hex: '#2563EB', text: '#fff' },
+  { name: 'Dark', hex: '#0F172A', text: '#fff' },
+  { name: 'White', hex: '#FFFFFF', text: '#1a1a1a' },
+  { name: 'Black', hex: '#1A1A1A', text: '#fff' },
+  { name: 'Gray', hex: '#64748B', text: '#fff' }
+];
+
+const grid = document.getElementById('colorGrid');
+colors.forEach(c => {
+  const swatch = document.createElement('div');
+  swatch.className = 'color-swatch';
+  swatch.innerHTML = `
+    <div class="swatch-block" style="background:${c.hex};${c.hex==='#FFFFFF'?'border:1px solid rgba(255,255,255,0.1)':''}"></div>
+    <div class="swatch-info">
+      <div class="swatch-name">${c.name}</div>
+      <div class="swatch-hex">${c.hex}</div>
+      <div class="swatch-copied" id="copied-${c.hex}">Copiado!</div>
+    </div>`;
+  swatch.addEventListener('click', () => {
+    navigator.clipboard.writeText(c.hex).then(() => {
+      showToast(`${c.hex} copiado!`);
+      const el = document.getElementById('copied-' + c.hex);
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 1500);
+    });
+  });
+  grid.appendChild(swatch);
+});
+
+/* ===== TOAST ===== */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+/* ===== INTERSECTION OBSERVER ===== */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+/* ===== NAV SCROLL ===== */
+const nav = document.querySelector('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.style.background = y > 60 ? 'rgba(15,23,42,0.95)' : 'rgba(15,23,42,0.85)';
+  lastScroll = y;
+}, { passive: true });
+</script>
+</body>
+</html>
